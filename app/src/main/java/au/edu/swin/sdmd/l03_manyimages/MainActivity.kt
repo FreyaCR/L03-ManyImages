@@ -19,23 +19,18 @@ class MainActivity : AppCompatActivity() {
             image.setImageDrawable(getDrawable(R.drawable.station))
         }
 
-        val onClickTheatre = View.OnClickListener {
-            image.setImageDrawable(getDrawable(R.drawable.theatre))
-        }
-
-        var onClickTheatre2: (() -> Unit)? = {
-            image.setImageDrawable(getDrawable(R.drawable.theatre))
+        val college = findViewById<Button>(R.id.college)
+        college.setOnClickListener {
+            image.setImageDrawable(getDrawable(R.drawable.college))
         }
 
         val theatre = findViewById<Button>(R.id.theatre)
-        theatre.setOnClickListener(onClickTheatre)
-        //theatre.setOnClickListener { onClickTheatre2?.invoke() }
+        theatre.setOnClickListener {
+            image.setImageDrawable(getDrawable(R.drawable.theatre))
+        }
 
-    }
 
-    fun onClickCollege(v: View) {
-        val image = findViewById<ImageView>(R.id.imageView)
-        image.setImageDrawable(getDrawable(R.drawable.college))
+
     }
 
 }
